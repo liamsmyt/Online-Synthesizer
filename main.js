@@ -104,13 +104,13 @@ function playSound(key) {
   compressor.threshold.setValueAtTime(-30, ctx.currentTime);
   compressor.knee.setValueAtTime(10, ctx.currentTime);
   compressor.ratio.setValueAtTime(40, ctx.currentTime);
-  compressor.attack.setValueAtTime(100, ctx.currentTime);
+  compressor.attack.setValueAtTime(-20, ctx.currentTime);
   compressor.release.setValueAtTime(20, ctx.currentTime);
 
   // filter
   const biquadFilter = ctx.createBiquadFilter();
   biquadFilter.type = "lowpass";
-  biquadFilter.frequency.setValueAtTime(50, ctx.currentTime);
+  biquadFilter.frequency.setValueAtTime(250, ctx.currentTime);
   biquadFilter.gain.setValueAtTime(25, ctx.currentTime);
 
   console.log();
@@ -249,3 +249,16 @@ function updateOctave(pressedKey) {
 }
 
 document.addEventListener("keydown", handleKeyPress);
+
+// show instructions
+const toggleButton = document.getElementById("toggleButton");
+const instructions = document.getElementById("instructions");
+
+toggleButton.addEventListener("click", function () {
+  // Toggle the visibility of the instructions
+  if (instructions.style.display === "none") {
+    instructions.style.display = "block";
+  } else {
+    instructions.style.display = "none";
+  }
+});

@@ -123,3 +123,14 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #3ac1ca;
 }
+
+#instructions {
+  font-family: DigitalFont;
+  font-size: 16px;
+  color: #000000;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
